@@ -1,0 +1,214 @@
+/* Alapbeállítások */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Táblázat konténere */
+#datatable {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    overflow-x: auto;
+}
+
+/* Autók táblázata */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+td {
+    font-size: 14px;
+}
+
+/* Fejléc */
+tr:first-child {
+    background: #1e3a8a;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+tr:first-child td {
+    border-bottom: none;
+}
+
+/* Váltakozó sorok */
+tr:nth-child(even):not(:first-child) {
+    background: #f8fafc;
+}
+
+tr:not(:first-child):hover {
+    background: #eaf2ff;
+    transition: background 0.2s ease;
+}
+
+/* Gombok közös stílusa */
+button {
+    padding: 11px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Fő műveleti gombok */
+#Add {
+    background: #16a34a;
+    color: white;
+}
+
+#Add:hover {
+    background: #15803d;
+}
+
+#change {
+    background: #2563eb;
+    color: white;
+}
+
+#change:hover {
+    background: #1d4ed8;
+}
+
+#Delete {
+    background: #dc2626;
+    color: white;
+}
+
+#Delete:hover {
+    background: #b91c1c;
+}
+
+/* Gombok középre igazítása */
+body > div:nth-of-type(2) {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+/* Szerkesztő- és hozzáadófelület */
+#Customizingmenu {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    line-height: 2.2;
+}
+
+/* Szöveges és számbemenetek */
+#Customizingmenu input[type="text"],
+#Customizingmenu input[type="number"] {
+    width: 100%;
+    padding: 11px 12px;
+    margin: 4px 0 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    color: #1e293b;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#Customizingmenu input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Rádiógombok */
+#Customizingmenu input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin: 0 8px;
+    vertical-align: middle;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* Űrlap műveleti gombjai */
+#Customizingmenu button {
+    margin-top: 12px;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+#Customizingmenu button:hover {
+    background: #1d4ed8;
+}
+
+/* Törlési lehetőségek */
+#Customizingmenu button[onclick="delid()"],
+#Customizingmenu button[onclick="delrendszam()"] {
+    background: #dc2626;
+}
+
+#Customizingmenu button[onclick="delid()"]:hover,
+#Customizingmenu button[onclick="delrendszam()"]:hover {
+    background: #b91c1c;
+}
+
+#Customizingmenu button[onclick="exit()"] {
+    background: #64748b;
+}
+
+#Customizingmenu button[onclick="exit()"]:hover {
+    background: #475569;
+}
+
+/* Mobilnézet */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    #datatable {
+        padding: 10px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    #Customizingmenu {
+        padding: 18px;
+    }
+
+    button {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
