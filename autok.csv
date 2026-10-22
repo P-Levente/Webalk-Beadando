@@ -1,0 +1,10 @@
+﻿id;rendszam;marka;modell;evjarat;uzemanyag;napiAr;berelheto;bereltnapok
+1;ABC-123;Toyota;Corolla;2022;Benzin;15000;false;1
+2;DEF-456;Volkswagen;Golf;2021;Dízel;17000;true;0
+3;GHI-789;Ford;Focus;2020;Benzin;14000;false;3
+4;JKL-321;BMW;320i;2023;Benzin;25000;true;0
+5;MNO-654;Skoda;Octavia;2022;Dízel;18000;true;0
+6;PQR-987;Kia;Ceed;2021;Benzin;14500;false;3
+7;STU-147;Audi;A4;2023;Dízel;26000;true;0
+8;VWX-258;Hyundai;i30;2020;Benzin;13000;true;0
+9;KBK-102;Opel;Astra;1998;Benzin;10000;true;0

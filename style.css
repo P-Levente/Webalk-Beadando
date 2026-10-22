@@ -1,214 +1,289 @@
-/* Alapbeállítások */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
+  --dark: #0f172a;
+  --surface: #ffffff;
+  --background: #f1f5f9;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --success: #16a34a;
+  --success-hover: #15803d;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
 }
 
 body {
-    margin: 0;
-    padding: 40px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f1f5f9;
-    color: #1e293b;
+  margin: 0;
+  padding: 32px 24px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.5;
 }
 
-/* Táblázat konténere */
-#datatable {
-    max-width: 1200px;
-    margin: 0 auto 25px;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-    overflow-x: auto;
+/* ===== Navigáció ===== */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-/* Autók táblázata */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    white-space: nowrap;
+.navbar nav {
+  padding: 13px 22px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-th,
-td {
-    padding: 14px 16px;
-    border-bottom: 1px solid #e2e8f0;
+.navbar nav:hover {
+  background: #334155;
+  color: #ffffff;
 }
 
-td {
-    font-size: 14px;
+#berles {
+  margin-left: auto;
+  background: var(--primary);
+  color: #ffffff;
 }
 
-/* Fejléc */
-tr:first-child {
-    background: #1e3a8a;
-    color: #ffffff;
-    font-weight: bold;
+#berles:hover {
+  background: var(--primary-hover);
 }
 
-tr:first-child td {
-    border-bottom: none;
+/* ===== Műveleti gombok ===== */
+#buttons {
+  max-width: 1200px;
+  margin: 0 auto 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Váltakozó sorok */
-tr:nth-child(even):not(:first-child) {
-    background: #f8fafc;
-}
-
-tr:not(:first-child):hover {
-    background: #eaf2ff;
-    transition: background 0.2s ease;
-}
-
-/* Gombok közös stílusa */
 button {
-    padding: 11px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+  padding: 11px 18px;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 button:hover {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 button:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-/* Fő műveleti gombok */
+button:focus-visible,
+.navbar nav:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
 #Add {
-    background: #16a34a;
-    color: white;
+  background: var(--success);
+  color: white;
 }
 
 #Add:hover {
-    background: #15803d;
+  background: var(--success-hover);
 }
 
 #change {
-    background: #2563eb;
-    color: white;
+  background: var(--primary);
+  color: white;
 }
 
 #change:hover {
-    background: #1d4ed8;
+  background: var(--primary-hover);
 }
 
 #Delete {
-    background: #dc2626;
-    color: white;
+  background: var(--danger);
+  color: white;
 }
 
 #Delete:hover {
-    background: #b91c1c;
+  background: var(--danger-hover);
 }
 
-/* Gombok középre igazítása */
-body > div:nth-of-type(2) {
-    max-width: 1200px;
-    margin: 0 auto 25px;
-    text-align: center;
+/* ===== Autólista ===== */
+#datatable {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 8px;
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-/* Szerkesztő- és hozzáadófelület */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+td,
+th {
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  font-size: 14px;
+}
+
+tr:first-child {
+  background: var(--dark);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tr:first-child td {
+  border-bottom: none;
+}
+
+tr:first-child td:first-child {
+  border-top-left-radius: 8px;
+}
+
+tr:first-child td:last-child {
+  border-top-right-radius: 8px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:not(:first-child) {
+  transition: background 0.2s ease;
+}
+
+tr:nth-child(even):not(:first-child) {
+  background: #f8fafc;
+}
+
+tr:not(:first-child):hover {
+  background: #dbeafe;
+}
+
+/* A táblázat sorai kattinthatók */
+#data tr:not(:first-child) {
+  cursor: pointer;
+}
+
+#data tr:first-child {
+  cursor: default;
+}
+
+/* ===== Űrlapok és szerkesztőpanel ===== */
+#MainCustomizingmenu {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 #Customizingmenu {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-    line-height: 2.2;
+  max-width: 600px;
+  margin: 0 auto 28px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.8;
 }
 
-/* Szöveges és számbemenetek */
 #Customizingmenu input[type="text"],
 #Customizingmenu input[type="number"] {
-    width: 100%;
-    padding: 11px 12px;
-    margin: 4px 0 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background: #f8fafc;
-    color: #1e293b;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+  display: block;
+  width: 100%;
+  min-height: 43px;
+  margin: 6px 0 16px;
+  padding: 10px 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 #Customizingmenu input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13);
 }
 
-/* Rádiógombok */
 #Customizingmenu input[type="radio"] {
-    width: 17px;
-    height: 17px;
-    margin: 0 8px;
-    vertical-align: middle;
-    accent-color: #2563eb;
-    cursor: pointer;
+  width: 17px;
+  height: 17px;
+  margin: 0 8px 0 2px;
+  vertical-align: middle;
+  accent-color: var(--primary);
+  cursor: pointer;
 }
 
-/* Űrlap műveleti gombjai */
 #Customizingmenu button {
-    margin-top: 12px;
-    background: #2563eb;
-    color: #ffffff;
+  margin: 12px 8px 0 0;
+  background: var(--primary);
+  color: #ffffff;
 }
 
 #Customizingmenu button:hover {
-    background: #1d4ed8;
+  background: var(--primary-hover);
 }
 
-/* Törlési lehetőségek */
+#Customizingmenu button[onclick="exit()"] {
+  background: var(--muted);
+}
+
+#Customizingmenu button[onclick="exit()"]:hover {
+  background: #475569;
+}
+
 #Customizingmenu button[onclick="delid()"],
 #Customizingmenu button[onclick="delrendszam()"] {
-    background: #dc2626;
+  background: var(--danger);
 }
 
 #Customizingmenu button[onclick="delid()"]:hover,
 #Customizingmenu button[onclick="delrendszam()"]:hover {
-    background: #b91c1c;
-}
-
-#Customizingmenu button[onclick="exit()"] {
-    background: #64748b;
-}
-
-#Customizingmenu button[onclick="exit()"]:hover {
-    background: #475569;
-}
-
-/* Mobilnézet */
-@media (max-width: 768px) {
-    body {
-        padding: 20px 10px;
-    }
-
-    #datatable {
-        padding: 10px;
-    }
-
-    th,
-    td {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-    #Customizingmenu {
-        padding: 18px;
-    }
-
-    button {
-        padding: 10px 14px;
-        font-size: 13px;
-    }
+  background: var(--danger-hover);
 }

@@ -1,19 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="hu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      #allapot {
+        max-width: 1200px;
+        margin: -14px auto 18px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      #datatable .kezdo {
+        padding: 24px;
+        text-align: center;
+      }
+      #datatable .kezdo p {
+        margin: 0 0 14px;
+      }
+      #datatable .kezdo button {
+        background: var(--primary);
+        color: #fff;
+        margin: 4px;
+      }
+    </style>
     <title>Autókölcsönző</title>
   </head>
   <body>
-    <div id="datatable"></div>
-    <div>
-      <button id="Add" onclick="add()">Hozzáadás</button>
-      <button id="change" onclick="change()">Szerkesztés</button>
-      <button id="Delete" onclick="del()">Törlés</button>
+    <div class="navbar">
+      <nav onclick="fszerk()" id="szerkeztes">Flotta Szerkesztése</nav>
+      <nav onclick="berel()" id="berles">Bérlés</nav>
     </div>
+    <div id="allapot"></div>
+    <div id="buttons"></div>
     <div id="MainCustomizingmenu"></div>
+    <div id="datatable"></div>
   </body>
 </html>
